@@ -151,8 +151,8 @@
         let gameState = 'start'; // 'start', 'playing', 'gameOver'
         let score = 0;
         let gameSpeed = 2;
-        let gravity = 0.5;
-        let flapPower = -12;
+        let gravity = 0.1;
+        let flapPower = -8;
 
         // Dino (flying dinosaur)
         const dino = {
@@ -269,27 +269,27 @@
             
             // Main body
             ctx.fillStyle = '#FF6B47';
-            ctx.fillRect(-25, -20, 40, 35);
+            ctx.fillRect(-15, -20, 40, 35);
             
-            // Head
+            // Head (hướng về phía trước)
             ctx.fillStyle = '#FF8C69';
-            ctx.fillRect(-35, -25, 30, 25);
+            ctx.fillRect(15, -25, 30, 25);
             
             // Eye
             ctx.fillStyle = '#000';
             ctx.beginPath();
-            ctx.arc(-25, -15, 4, 0, Math.PI * 2);
+            ctx.arc(25, -15, 4, 0, Math.PI * 2);
             ctx.fill();
             
             // Eye shine
             ctx.fillStyle = '#fff';
             ctx.beginPath();
-            ctx.arc(-23, -17, 1.5, 0, Math.PI * 2);
+            ctx.arc(27, -17, 1.5, 0, Math.PI * 2);
             ctx.fill();
             
-            // Beak/Snout
+            // Beak/Snout (hướng về phía trước)
             ctx.fillStyle = '#FF4500';
-            ctx.fillRect(-45, -18, 12, 8);
+            ctx.fillRect(45, -18, 12, 8);
             
             // Wings (animated)
             ctx.fillStyle = '#FF6347';
@@ -305,17 +305,17 @@
             ctx.fillRect(-15, 5, 35, 15);
             ctx.restore();
             
-            // Tail
+            // Tail (hướng về phía sau)
             ctx.fillStyle = '#FF8C69';
-            ctx.fillRect(10, -10, 25, 15);
+            ctx.fillRect(-35, -10, 25, 15);
             
             // Spikes on back
             ctx.fillStyle = '#FF4500';
             for (let i = 0; i < 3; i++) {
                 ctx.beginPath();
-                ctx.moveTo(-10 + i * 10, -20);
-                ctx.lineTo(-5 + i * 10, -35);
-                ctx.lineTo(0 + i * 10, -20);
+                ctx.moveTo(-5 + i * 10, -20);
+                ctx.lineTo(0 + i * 10, -35);
+                ctx.lineTo(5 + i * 10, -20);
                 ctx.fill();
             }
             
